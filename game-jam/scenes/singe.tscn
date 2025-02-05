@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkmixxjyya2xr"]
+
+[ext_resource type="Texture2D" uid="uid://jq45upmlxkja" path="res://assets/sprites/perso_Mechant_Test.png" id="1_47uia"]
+[ext_resource type="Script" path="res://scripts/singe.gd" id="1_ha1tu"]
+[ext_resource type="PackedScene" uid="uid://ccm0jbpts3oct" path="res://scenes/killzone.tscn" id="2_gkcbe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6j58"]
+atlas = ExtResource("1_47uia")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhyw3"]
+atlas = ExtResource("1_47uia")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7t8n2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6j58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhyw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4nda"]
+radius = 8.0
+height = 28.0
+
+[node name="Singe" type="Node2D"]
+script = ExtResource("1_ha1tu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, -11)
+scale = Vector2(0.074, 0.074)
+sprite_frames = SubResource("SpriteFrames_7t8n2")
+autoplay = "default"
+frame = 1
+frame_progress = 0.495518
+
+[node name="Killzone" parent="." instance=ExtResource("2_gkcbe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_e4nda")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-9, 0)

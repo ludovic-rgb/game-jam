@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://p6ofmvmd6uqd"]
+[gd_scene load_steps=16 format=3 uid="uid://p6ofmvmd6uqd"]
 
 [ext_resource type="PackedScene" uid="uid://cv2m706hogwfx" path="res://scenes/player.tscn" id="1_7i4ex"]
 [ext_resource type="Texture2D" uid="uid://d0aqna20r2wcq" path="res://assets/sprites/fond-jungle.png" id="1_ai5vw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://yad4dvhj6j4d" path="res://scenes/coin.tscn" id="4_8adqi"]
 [ext_resource type="PackedScene" uid="uid://ccm0jbpts3oct" path="res://scenes/killzone.tscn" id="5_salus"]
 [ext_resource type="PackedScene" uid="uid://bkmixxjyya2xr" path="res://scenes/singe.tscn" id="7_e1xch"]
+[ext_resource type="AudioStream" uid="uid://c3xywvbktxk7q" path="res://assets/music/Main music.ogg" id="9_skpwy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_laeba"]
 texture = ExtResource("2_4cjrr")
@@ -277,3 +278,8 @@ autoplay = "move"
 
 [node name="Singe" parent="." instance=ExtResource("7_e1xch")]
 position = Vector2(152, 53)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_skpwy")
+autoplay = true
+bus = &"Music"

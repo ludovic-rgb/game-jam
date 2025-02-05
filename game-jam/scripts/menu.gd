@@ -19,5 +19,5 @@ func _on_options_pressed() :
 	print("Acceder aux Options")
 
 
-func _on_Quitter_pressed() :
+func _on_Quitter_pressed():
 	get_tree().quit()

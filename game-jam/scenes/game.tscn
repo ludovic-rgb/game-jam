@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://p6ofmvmd6uqd"]
+[gd_scene load_steps=26 format=3 uid="uid://p6ofmvmd6uqd"]
 
 [ext_resource type="PackedScene" uid="uid://cv2m706hogwfx" path="res://scenes/player.tscn" id="1_7i4ex"]
 [ext_resource type="Texture2D" uid="uid://d0aqna20r2wcq" path="res://assets/sprites/fond-jungle.png" id="1_ai5vw"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_th2i6"]
+[ext_resource type="PackedScene" uid="uid://dy48hx6xxn2nv" path="res://scenes/pause_menu.tscn" id="2_0ygyn"]
 [ext_resource type="Texture2D" uid="uid://dcoekmajc7vuq" path="res://assets/sprites/world_tileset.png" id="2_4cjrr"]
 [ext_resource type="PackedScene" uid="uid://coou1lehgdtyt" path="res://scenes/serpent.tscn" id="3_30f62"]
 [ext_resource type="PackedScene" uid="uid://ddlmwrdftfxas" path="res://scenes/platform.tscn" id="3_hcn0f"]
@@ -296,6 +297,11 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("1_th2i6")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="PauseMenu" parent="GameManager/CanvasLayer" instance=ExtResource("2_0ygyn")]
+visible = false
+
 [node name="Backgraound" type="Node2D" parent="."]
 
 [node name="Fond-jungle" type="Sprite2D" parent="Backgraound"]
@@ -344,7 +350,7 @@ scale = Vector2(0.239815, 0.239815)
 texture = ExtResource("1_ai5vw")
 
 [node name="Player" parent="." instance=ExtResource("1_7i4ex")]
-position = Vector2(2413, 41)
+position = Vector2(7, 61)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-13, 38)

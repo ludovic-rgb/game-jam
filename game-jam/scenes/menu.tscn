@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dcfwc4kkdpbfo"]
 
-[ext_resource type="Texture2D" uid="uid://b0n7ba7itxo3h" path="res://assets/sprites/fond-junglemenu.png" id="1_j2vmd"]
+[ext_resource type="Texture2D" uid="uid://bpm1uopadvjcn" path="res://assets/sprites/fond-junglemenu.png" id="1_j2vmd"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nsw32"]
 [ext_resource type="FontFile" uid="uid://bknqappfb3jkf" path="res://assets/fonts/GrapeSoda.ttf" id="2_j6iuk"]
 

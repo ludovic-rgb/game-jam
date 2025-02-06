@@ -51,7 +51,7 @@ scale = Vector2(0.199749, 0.199749)
 sprite_frames = SubResource("SpriteFrames_5bctp")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.809483
+frame_progress = 0.209575
 
 [node name="Killzone" parent="." instance=ExtResource("2_1qnui")]
 

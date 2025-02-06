@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cv2m706hogwfx" path="res://scenes/player.tscn" id="1_7i4ex"]
 [ext_resource type="Texture2D" uid="uid://d0aqna20r2wcq" path="res://assets/sprites/fond-jungle.png" id="1_ai5vw"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_th2i6"]
-[ext_resource type="PackedScene" uid="uid://dy48hx6xxn2nv" path="res://scenes/pause_menu.tscn" id="2_0ygyn"]
+[ext_resource type="PackedScene" uid="uid://bt5kpl8uatwc2" path="res://scenes/pause_menu.tscn" id="2_0ygyn"]
 [ext_resource type="Texture2D" uid="uid://dcoekmajc7vuq" path="res://assets/sprites/world_tileset.png" id="2_4cjrr"]
 [ext_resource type="PackedScene" uid="uid://coou1lehgdtyt" path="res://scenes/serpent.tscn" id="3_30f62"]
 [ext_resource type="PackedScene" uid="uid://ddlmwrdftfxas" path="res://scenes/platform.tscn" id="3_hcn0f"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://coou1lehgdtyt"]
+
+[ext_resource type="Texture2D" uid="uid://d3r2kbp0mii1t" path="res://assets/sprites/mechant serpent 2.png" id="1_yf3sa"]
+[ext_resource type="PackedScene" uid="uid://ccm0jbpts3oct" path="res://scenes/killzone.tscn" id="2_1qnui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gexm"]
+atlas = ExtResource("1_yf3sa")
+region = Rect2(0, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmibk"]
+atlas = ExtResource("1_yf3sa")
+region = Rect2(199, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqpfy"]
+atlas = ExtResource("1_yf3sa")
+region = Rect2(398, 0, 199, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ooun"]
+atlas = ExtResource("1_yf3sa")
+region = Rect2(597, 0, 199, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bctp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gexm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmibk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqpfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ooun")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hchyf"]
+radius = 13.0
+height = 40.0
+
+[node name="serpent" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -8)
+scale = Vector2(0.199749, 0.199749)
+sprite_frames = SubResource("SpriteFrames_5bctp")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.809483
+
+[node name="Killzone" parent="." instance=ExtResource("2_1qnui")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(3, -6)
+shape = SubResource("CapsuleShape2D_hchyf")

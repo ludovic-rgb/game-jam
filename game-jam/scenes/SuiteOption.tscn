@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpjpcwuatttsf"]
+
+[ext_resource type="Script" path="res://scripts/suite_option.gd" id="1_3guwn"]
+[ext_resource type="Texture2D" uid="uid://b0n7ba7itxo3h" path="res://assets/sprites/fond-junglemenu.png" id="1_q3ken"]
+[ext_resource type="PackedScene" uid="uid://d3nqabw8rwe8s" path="res://scenes/h_slider.tscn" id="2_go1fk"]
+[ext_resource type="FontFile" uid="uid://bknqappfb3jkf" path="res://assets/fonts/GrapeSoda.ttf" id="3_ojbrv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6k5i"]
+texture = ExtResource("1_q3ken")
+modulate_color = Color(0.310617, 0.310617, 0.310617, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gepk7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7diim"]
+bg_color = Color(0.568973, 0.568973, 0.568973, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bnqw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3guwn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p6k5i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -29.0
+offset_right = 179.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="HSlider" parent="VBoxContainer" instance=ExtResource("2_go1fk")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pièce volume"
+
+[node name="HSlider2" parent="VBoxContainer" instance=ExtResource("2_go1fk")]
+layout_mode = 2
+bus_name = "piece"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gepk7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7diim")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7diim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bnqw")
+text = "Retour"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -243.0
+offset_right = 179.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("3_ojbrv")
+theme_override_font_sizes/font_size = 112
+text = "Eden fall"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+
+[node name="piece" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

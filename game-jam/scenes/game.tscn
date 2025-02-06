@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://p6ofmvmd6uqd"]
+[gd_scene load_steps=16 format=3 uid="uid://p6ofmvmd6uqd"]
 
 [ext_resource type="PackedScene" uid="uid://cv2m706hogwfx" path="res://scenes/player.tscn" id="1_7i4ex"]
 [ext_resource type="Texture2D" uid="uid://d0aqna20r2wcq" path="res://assets/sprites/fond-jungle.png" id="1_ai5vw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://yad4dvhj6j4d" path="res://scenes/coin.tscn" id="4_8adqi"]
 [ext_resource type="PackedScene" uid="uid://ccm0jbpts3oct" path="res://scenes/killzone.tscn" id="5_salus"]
 [ext_resource type="PackedScene" uid="uid://bkmixxjyya2xr" path="res://scenes/singe.tscn" id="7_e1xch"]
+[ext_resource type="PackedScene" uid="uid://44qduockcuko" path="res://scenes/pause_menu.tscn" id="9_hboum"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_laeba"]
 texture = ExtResource("2_4cjrr")
@@ -215,6 +216,16 @@ _data = {
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_th2i6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="PauseMenu" parent="GameManager/CanvasLayer" instance=ExtResource("9_hboum")]
+visible = false
+self_modulate = Color(0.89059, 0.89059, 0.89059, 1)
+offset_left = 21.0
+offset_top = 3.0
+offset_right = 21.0
+offset_bottom = 3.0
 
 [node name="Fond-jungle" type="Sprite2D" parent="."]
 position = Vector2(122, 20)

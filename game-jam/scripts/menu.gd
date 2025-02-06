@@ -16,7 +16,7 @@ func _on_Start_pressed() :
 
 
 func _on_options_pressed() :
-	print("Acceder aux Options")
+	get_tree().change_scene_to_file("res://scenes/SuiteOption.tscn")
 
 
 func _on_Quitter_pressed():

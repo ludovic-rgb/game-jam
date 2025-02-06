@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbg0m83ptw5qy"]
+
+[ext_resource type="Texture2D" uid="uid://cdxwjgi0t2xpm" path="res://assets/sprites/flamme serpent.png" id="1_ej08r"]
+[ext_resource type="PackedScene" uid="uid://ccm0jbpts3oct" path="res://scenes/killzone.tscn" id="2_2q2o6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ug7pg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddkhn"]
+
+[node name="projectile" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.180328, 0.180328)
+texture = ExtResource("1_ej08r")
+
+[node name="Killzone" parent="." instance=ExtResource("2_2q2o6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_ug7pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19, 129)
+shape = SubResource("CircleShape2D_ddkhn")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0n7ba7itxo3h"
-path="res://.godot/imported/fond-junglemenu.png-366520b7a621c1a0808a0477efc34fcf.ctex"
+uid="uid://crwfqm2fi1vea"
+path="res://.godot/imported/cheminer.png-0d799f9dfe07d64e0ef7a7a28d0ac61b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fond-junglemenu.png"
-dest_files=["res://.godot/imported/fond-junglemenu.png-366520b7a621c1a0808a0477efc34fcf.ctex"]
+source_file="res://assets/sprites/cheminer.png"
+dest_files=["res://.godot/imported/cheminer.png-0d799f9dfe07d64e0ef7a7a28d0ac61b.ctex"]
 
 [params]
 

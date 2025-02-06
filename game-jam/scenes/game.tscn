@@ -350,7 +350,7 @@ scale = Vector2(0.239815, 0.239815)
 texture = ExtResource("1_ai5vw")
 
 [node name="Player" parent="." instance=ExtResource("1_7i4ex")]
-position = Vector2(-3, 54)
+position = Vector2(376, 36)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-13, 38)
@@ -389,9 +389,6 @@ position = Vector2(262, -82)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("3_hcn0f")]
-position = Vector2(106, -20)
-
 [node name="Platform2" parent="Platforms" instance=ExtResource("3_hcn0f")]
 position = Vector2(431, 58)
 
@@ -408,7 +405,7 @@ position = Vector2(152, 53)
 position = Vector2(431, 58)
 
 [node name="Singe2" parent="." instance=ExtResource("7_e1xch")]
-position = Vector2(1450, 16)
+position = Vector2(1450, 19)
 
 [node name="Coin" parent="." instance=ExtResource("4_8adqi")]
 position = Vector2(664, 8)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cpjpcwuatttsf"]
 
 [ext_resource type="Script" path="res://scripts/suite_option.gd" id="1_3guwn"]
-[ext_resource type="Texture2D" uid="uid://b0n7ba7itxo3h" path="res://assets/sprites/fond-junglemenu.png" id="1_q3ken"]
+[ext_resource type="Texture2D" uid="uid://bk3rpm508lv4o" path="res://assets/sprites/fond-junglemenu.png" id="1_q3ken"]
 [ext_resource type="PackedScene" uid="uid://d3nqabw8rwe8s" path="res://scenes/h_slider.tscn" id="2_go1fk"]
 [ext_resource type="FontFile" uid="uid://bknqappfb3jkf" path="res://assets/fonts/GrapeSoda.ttf" id="3_ojbrv"]
 
@@ -54,28 +54,22 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -179.0
-offset_top = -29.0
+offset_top = -36.0
 offset_right = 179.0
-offset_bottom = 177.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 9
+theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Music_Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
 text = "Music volume"
 
-[node name="HSlider" parent="VBoxContainer" instance=ExtResource("2_go1fk")]
+[node name="Music volume" parent="VBoxContainer" instance=ExtResource("2_go1fk")]
 layout_mode = 2
-bus_name = "Music"
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Pièce volume"
-
-[node name="HSlider2" parent="VBoxContainer" instance=ExtResource("2_go1fk")]
-layout_mode = 2
-bus_name = "piece"
+bus_name = "Master"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -113,7 +107,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music volume"
 
 [node name="piece" type="AudioStreamPlayer2D" parent="."]
+bus = &"Pièce volume"
 
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

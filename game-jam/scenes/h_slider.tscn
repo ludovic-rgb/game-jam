@@ -6,5 +6,5 @@
 offset_right = 23.0
 offset_bottom = 18.0
 max_value = 1.0
-step = 0.01
+step = 0.001
 script = ExtResource("1_5cy06")

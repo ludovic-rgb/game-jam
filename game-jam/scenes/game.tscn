@@ -215,6 +215,21 @@ _data = {
 "move": SubResource("Animation_byv4u")
 }
 
+[sub_resource type="Animation" id="Animation_ojw0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1136, -40)]
+}
+
 [sub_resource type="Animation" id="Animation_887bx"]
 resource_name = "move"
 length = 3.0
@@ -232,25 +247,25 @@ tracks/0/keys = {
 "values": [Vector2(1136, -38), Vector2(1136, 84)]
 }
 
-[sub_resource type="Animation" id="Animation_ojw0w"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmg2i"]
+_data = {
+"RESET": SubResource("Animation_ojw0w"),
+"move": SubResource("Animation_887bx")
+}
+
+[sub_resource type="Animation" id="Animation_syp5m"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../projectile:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1136, -40)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmg2i"]
-_data = {
-"RESET": SubResource("Animation_ojw0w"),
-"move": SubResource("Animation_887bx")
+"values": [Vector2(2638, 97)]
 }
 
 [sub_resource type="Animation" id="Animation_0koy6"]
@@ -268,21 +283,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2638, 97), Vector2(2457, 97)]
-}
-
-[sub_resource type="Animation" id="Animation_syp5m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../projectile:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2638, 97)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ksbt"]
@@ -312,6 +312,11 @@ texture = ExtResource("1_ai5vw")
 [node name="Fond-jungle3" type="Sprite2D" parent="Backgraound"]
 position = Vector2(122, -12)
 scale = Vector2(0.239815, 0.239815)
+texture = ExtResource("1_ai5vw")
+
+[node name="Fond-jungle3" type="Sprite2D" parent="Backgraound/Fond-jungle3"]
+position = Vector2(-1911.66, 12.5097)
+scale = Vector2(0.996138, 0.996138)
 texture = ExtResource("1_ai5vw")
 
 [node name="Fond-jungle2" type="Sprite2D" parent="Backgraound"]
@@ -350,7 +355,7 @@ scale = Vector2(0.239815, 0.239815)
 texture = ExtResource("1_ai5vw")
 
 [node name="Player" parent="." instance=ExtResource("1_7i4ex")]
-position = Vector2(3419, 54)
+position = Vector2(-41, 63)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-13, 38)
@@ -405,7 +410,7 @@ autoplay = "move"
 position = Vector2(152, 53)
 
 [node name="Singe2" parent="." instance=ExtResource("7_e1xch")]
-position = Vector2(1450, 20)
+position = Vector2(1450, 21)
 
 [node name="Coin" parent="." instance=ExtResource("4_8adqi")]
 position = Vector2(664, 8)
@@ -459,6 +464,11 @@ texture = ExtResource("9_5urc8")
 [node name="Vagues1" type="Sprite2D" parent="."]
 position = Vector2(97, 133)
 scale = Vector2(0.399414, 0.238281)
+texture = ExtResource("10_4dg3r")
+
+[node name="Vagues1" type="Sprite2D" parent="Vagues1"]
+position = Vector2(-1326.62, 15.457)
+scale = Vector2(1.61121, 0.961211)
 texture = ExtResource("10_4dg3r")
 
 [node name="Vagues2" type="Sprite2D" parent="."]
